@@ -37,10 +37,10 @@ module Phonie
     # Optionally a +default_area_code+ may be passed in order to
     # allow parsing local number numbers for a known area code
     def parse(number, default_area_code = nil)
-      parsed_number = parse_area_code_match(number) if country_code.present?
-      parsed_number ||= parse_full_match(number)
-      parsed_number ||= parse_with_default(number, default_area_code)
-      parsed_number ||= {}
+      parse_full_match(number) ||
+      parse_area_code_match(number) ||
+      parse_with_default(number, default_area_code) ||
+      {}
     end
 
     # Test if a phone number could possibly be valid by testing
@@ -74,9 +74,11 @@ module Phonie
       string =~ number_regex && default_area_code =~ area_code_regex
     end
 
+    # check if existing country code matches regex country code
     def parse_full_match(number)
       match = number.match(full_number_regex)
       return nil unless match
+      return nil unless match[1] == country_code if !country_code.nil?
 
       { area_code: match[2],
         number:    match[-1] }
