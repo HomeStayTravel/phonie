@@ -231,14 +231,14 @@
 -
   :country_code: '225'
   :national_dialing_prefix: '0'
+  :international_dialing_prefix: '00'
   :char_2_code: '0'
   :iso_3166_code: CI
+  :name: Ivory Coast
   :area_code: (?:2(?:0[023]|1[02357]|[23][045]|4[03-5])|3(?:0[06]|1[069]|[2-4][07]|5[09]|6[08]))|(?:0[1-9]|4\d|5[14-9]|6[015-79]|7[578]|8[79])
-  :local_number_format: \d{5}
+  :local_number_format: \d{5,6}
   :mobile_format: (?:0[1-9]|4\d|5[14-9]|6[015-79]|7[578]|8[79])\d{6}
-  :name: CÃ´te D'Ivoire
-  :international_dialing_prefix: '00'
-  :number_format: \d{7,8}
+  :number_format: \d{8}
 -
   :country_code: '56'
   :national_dialing_prefix: '0'
