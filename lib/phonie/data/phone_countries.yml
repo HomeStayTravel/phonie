@@ -28,9 +28,9 @@
   :iso_3166_code: CR
   :name: Costa Rica
   :international_dialing_prefix: '00'
-  :area_code: '[28]'
-  :local_number_format: \d{7}
-  :mobile_format: 8\d{7}
+  :area_code: 5(?:0[01]|7[0-3])|(?:[67][0-3]|8[3-9])|2[0-24-7]
+  :local_number_format: \d{6,8}
+  :mobile_format: 5(?:0[01]|7[0-3])|(?:[67][0-3]|8[3-9])\d{5,6}
   :number_format: \d{8}
 -
   :country_code: '251'
