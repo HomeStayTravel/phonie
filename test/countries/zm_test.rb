@@ -5,6 +5,7 @@ class ZMTest < Phonie::TestCase
 
   def test_mobile
     parse_test('+260 966 123456', '260', '966', '123456',"Zambia",true)
+    parse_test('+260 973 123456', '260', '973', '123456',"Zambia",true)
   end
 
   def test_locale
