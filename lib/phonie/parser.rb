@@ -74,9 +74,11 @@ module Phonie
       string =~ number_regex && default_area_code =~ area_code_regex
     end
 
+    # check if existing country code matches regex country code
     def parse_full_match(number)
       match = number.match(full_number_regex)
       return nil unless match
+      return nil unless match[1] == country_code if !country_code.nil?
 
       { area_code: match[2],
         number:    match[-1] }
